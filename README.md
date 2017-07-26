@@ -9,4 +9,4 @@ Actuarĭu
 
 --------------------
 
-![](https://github.com/CristianAmbrosi/actuariu/imgs/actuariu.png)
+![](https://github.com/CristianAmbrosi/actuariu/tree/master/imgsactuariu.png)
