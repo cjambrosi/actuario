@@ -18,7 +18,7 @@
   "homepage": "https://github.com/CristianAmbrosi/actuariu#readme",
   "devDependencies": {
     "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.6.1"
+    "webpack-dev-server": "^4.29.6"
   },
   "dependencies": {
     "babel-core": "^6.25.0",
