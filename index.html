@@ -1,43 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-	<title>Actuarĭu</title>
-
-	<!-- Favicon -->
-	<link rel="icon" type="image/png" sizes="16x16" href="imgs/actuariu.png">
-	<!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!-- Materialize CSS -->
-	<link rel="stylesheet" type="text/css" href="css/materialize/materialize.min.css">
-	<!-- Custom CSS -->
-	<link rel="stylesheet" type="text/css" href="css/default.css">
-
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Actuarĭu</title>
+	<link rel="icon" type="image/png" sizes="16x16" href="imgs/actuariu.png">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- <link rel="stylesheet" type="text/css" href="css/materialize/materialize.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/pub/css/lib.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/pub/css/build.min.css">
 </head>
 <body>
 	<div class="navbar-fixed">
-	    <nav class="grey_color">
-	      	<div id="menu-navegacao" class="nav-wrapper container">
-  			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-	      		<span class="font_logo brand-logo center">Actuarĭu</span>
-	        	<ul class="left hide-on-med-and-down">
-	        		<li><a href="#calcular">Calcular</a></li>
-	          		<li><a href="#distri_freque">Tabela Distribuição de Frequência</a></li>
-	          	</ul>
-	        	<ul class="right hide-on-med-and-down">
-	          		<li><a href="#anali_dados">Resultados da Análise de Dados</a></li>
-	          		<li><a href="#graficos">Gráficos</a></li>
-	        	</ul>
-	      	</div>
-	    </nav>
+		<nav class="grey_color">
+			<div id="menu-navegacao" class="nav-wrapper container">
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<span class="font_logo brand-logo center">Actuarĭu</span>
+				<ul class="left hide-on-med-and-down">
+					<li><a href="#calcular">Calcular</a></li>
+					<li><a href="#distri_freque">Tabela Distribuição de Frequência</a></li>
+				</ul>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#anali_dados">Resultados da Análise de Dados</a></li>
+					<li><a href="#graficos">Gráficos</a></li>
+				</ul>
+			</div>
+		</nav>
 	</div>
+
 	<!-- Menu Mobile -->
 	<ul class="side-nav" id="mobile-demo">
 		<li><a href="#calcular">Calcular</a></li>
-  		<li><a href="#distri_freque">Tabela Distribuição de Frequência</a></li>
-  		<li><a href="#anali_dados">Resultados da Análise de Dados</a></li>
-  		<li><a href="#graficos">Gráficos</a></li>
+		<li><a href="#distri_freque">Tabela Distribuição de Frequência</a></li>
+		<li><a href="#anali_dados">Resultados da Análise de Dados</a></li>
+		<li><a href="#graficos">Gráficos</a></li>
 	</ul>
 
 	<div class="container">
@@ -49,14 +46,14 @@
 					</div>
 				</div>
 				<div class="row">
-			        <div class="input-field col s12">
-			          <textarea id="text-calc" class="materialize-textarea"></textarea>
-			          <label for="text-calc">Digite seus dados aqui. Ex: 30 83 54 44 28 19 39 9 8 22</label>
-			          <div class="center-align">
-			          	<button id="btn_calc" class="grey darken-2 btn btn-large waves-effect waves-light">Calcular</button>
-			          </div>
-			        </div>
-			    </div>
+					<div class="input-field col s12">
+						<textarea id="text-calc" class="materialize-textarea"></textarea>
+						<label for="text-calc">Digite seus dados aqui. Ex: 30 83 54 44 28 19 39 9 8 22</label>
+						<div class="center-align">
+							<button id="btn_calc" class="grey darken-2 btn btn-large waves-effect waves-light">Calcular</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -83,22 +80,22 @@
 			<div class="col s12">
 				<h4 class="grey-text text-darken-2 center-align">Resultados da Análise de Dados</h4>
 				<div class="col s12">
-	            	<h5>Conjunto Ordenado: <span id="conjunto" class="line-height anali-dados-font grey-text text-darken-2" >0</span></h5>
-	          	</div>
-	          	<div class="col s12 m6 l6">
-	            	<h5>Média Aritmética: <span id="media_aritmetica" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-	            	<h5>Média Geométrica (G): <span id="media_geometrica" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-	            	<h5>Moda (mo): <span id="moda" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-	            	<h5>Mediana: <span id="mediana" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-	            	<h5>Desvio Padrão Amostral (s): <span id="desvio_amostral" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-	          	</div>
-	          	<div class="col s12 m6 l6">
-	            	<h5>Variãncia Amostral (s²): <span id="variancia_amostral" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-	            	<h5>Desvio Padrão Populacional (σ): <span id="desvio_populacional" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-	            	<h5>Variãncia Populacional (σ²): <span id="variancia_populacional" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-	            	<h5>CV Amostral: <span id="coeficiente_variacao_amostral" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-	            	<h5>CV Populacional: <span id="coeficiente_variacao_populacional" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-	          	</div>
+					<h5>Conjunto Ordenado: <span id="conjunto" class="line-height anali-dados-font grey-text text-darken-2" >0</span></h5>
+					</div>
+					<div class="col s12 m6 l6">
+					<h5>Média Aritmética: <span id="media_aritmetica" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
+					<h5>Média Geométrica (G): <span id="media_geometrica" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
+					<h5>Moda (mo): <span id="moda" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
+					<h5>Mediana: <span id="mediana" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
+					<h5>Desvio Padrão Amostral (s): <span id="desvio_amostral" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
+					</div>
+					<div class="col s12 m6 l6">
+					<h5>Variãncia Amostral (s²): <span id="variancia_amostral" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
+					<h5>Desvio Padrão Populacional (σ): <span id="desvio_populacional" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
+					<h5>Variãncia Populacional (σ²): <span id="variancia_populacional" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
+					<h5>CV Amostral: <span id="coeficiente_variacao_amostral" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
+					<h5>CV Populacional: <span id="coeficiente_variacao_populacional" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
+					</div>
 			</div>
 		</div>
 
@@ -117,30 +114,29 @@
 		</div>
 	</div>
 
-    <footer class="page-footer grey_color">
-      	<div class="footer-copyright">
-        	<div class="container cop_footer center grey-text text-lighten-4">
-          		<p class="grey-text text-lighten-4">© <span id="data-ano"></span> Cristian J. Ambrosi</p>
-        	</div>
-      	</div>
-    </footer>
+	<footer class="page-footer grey_color">
+			<div class="footer-copyright">
+			<div class="container cop_footer center grey-text text-lighten-4">
+					<p class="grey-text text-lighten-4">© <span id="data-ano"></span> Cristian J. Ambrosi</p>
+			</div>
+			</div>
+	</footer>
 
-    <script type="text/javascript" src="js/calc/bundle.js"></script>
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/materialize/materialize.min.js"></script>
+	<script src="assets/pub/js/lib.min.js"></script>
 	<script type="text/javascript" src="js/default.js"></script>
+	<script src="assets/pub/js/build.min.js"></script>
 
 	<!--
-      Instalação dos Módulos
-        - npm install && npm install -g webpack
-        - webpack -p // Sempre que alterar o arquivo 'calculos-estatisticos.js', rodar esse comando na raiz do projeto.
+		Instalação dos Módulos
+		- npm install && npm install -g webpack
+		- webpack -p // Sempre que alterar o arquivo 'calculos-estatisticos.js', rodar esse comando na raiz do projeto.
 
-      Dados para teste (Apostila, pag 23):
-      150 151 152 153 154 155 155 155 156 156 156 157 158 158 160 160 160 160 160 161 161 161 161 162 162 163 163 164 164 164 165 166 167 168 168 169 170 170 172 173
+		Dados para teste (Apostila, pag 23):
+		150 151 152 153 154 155 155 155 156 156 156 157 158 158 160 160 160 160 160 161 161 161 161 162 162 163 163 164 164 164 165 166 167 168 168 169 170 170 172 173
 
-      Dados do Professor
-      10 13 20 20 21 23 23 23  23 24 24 25 25 25 25 25 25 25 25 25 26  26  26 31 31 32 32 32 32 32 34 35 35 36 36 36 36 42 45 52
-    -->
-
+		Dados do Professor
+		10 13 20 20 21 23 23 23  23 24 24 25 25 25 25 25 25 25 25 25 26  26  26 31 31 32 32 32 32 32 34 35 35 36 36 36 36 42 45 52
+	-->
+	
 </body>
 </html>
