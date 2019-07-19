@@ -15,7 +15,3 @@ $('#menu-navegacao').find('a').click(function(){
 		} 
 	}
 });
-
-// Mostrar ano atual
-let data = new Date();
-document.getElementById('data-ano').innerHTML = data.getFullYear();

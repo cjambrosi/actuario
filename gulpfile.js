@@ -14,7 +14,7 @@ let reload = browserSync.reload;
 
 let sources = {
     less: [
-        // './assets/dev/less/reset.less',
+        './assets/dev/less/reset.less',
         './assets/dev/less/default.less'
     ],
     lib: {
@@ -35,9 +35,10 @@ let sources = {
         ]
     }, 
     js: [
-        './assets/dev/js/calc/calculos-estatisticos.js',
-        './assets/dev/js/calc/application.js',
-        './assets/dev/js/calc/chart.module.js'
+        // './assets/dev/js/calc/calculos-estatisticos.js',
+        // './assets/dev/js/calc/application.js',
+        // './assets/dev/js/calc/chart.module.js'
+        './assets/dev/js/default.js'
     ],
     watch: {
         less: [
