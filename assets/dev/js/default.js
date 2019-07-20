@@ -1,6 +1,7 @@
 $(document).ready(() => {
 	anchorEffect();
 	$('.tooltipped').tooltip();
+	$('.sidenav').sidenav();
 });
 
 const anchorEffect = () => {
