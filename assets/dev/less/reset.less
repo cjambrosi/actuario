@@ -18,7 +18,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
+    margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
@@ -140,7 +140,7 @@ html {
  */
 
 a:focus {
-    outline: thin dotted;
+    outline: none;
 }
 
 /**
@@ -352,16 +352,19 @@ textarea {
     }
 }
 
+strong {
+    font-weight: 700;
+}
 
 ::selection {
     color: #fff;
-    background: #00b6ff;
-    background: rgba(0, 182, 255);
+    background: #9e9e9e;
+    background: rgba(158, 158, 158, 1);
 }
 ::-moz-selection {
     color: #fff;
-    background: #00b6ff;
-    background: rgba(0, 182, 255);
+    background: #9e9e9e;
+    background: rgba(158, 158, 158, 1);
 }
 
 img {
@@ -391,15 +394,6 @@ main {
     -webkit-flex: 1 0 auto;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
-}
-
-nav ul a {
-    margin: 0 15px;
-    padding: 0;
-}
-
-nav ul a:hover {
-    background: none;
 }
 
 .row {
