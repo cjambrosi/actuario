@@ -1,14 +1,19 @@
-Actuarĭu
-===============================================
+<div align="center">
+  <img src="assets/images/actuariu.png" width=150px height=150px alt="Escalonadores" />
+</div>
+
+<h2 align="center">Actuarĭu</h2>
+
+<div align="center">
+
+-------------------- 
+
+**Demo:** https://cristianambrosi.github.io/actuario
 
 --------------------
 
-- Programa estatístico básico. Desenvolvido para a matéria de Estatística Aplicada à Computação.
+</div>
 
-- Para utilizá-lo, acesse o link de demonstração a baixo ou pode clonar/baixar o repositório e abrir/executar o arquivo *index.html* no seu navegador.
+## Sobre
 
-- **Demo:** https://cristianambrosi.github.io/actuario/
-
---------------------
-
-![](https://github.com/CristianAmbrosi/actuariu/blob/master/imgs/actuariu.png)
+Simples aplicação demonstrativa de cálculos estatísticos, desenvolvido para a matéria de Estatística Aplicada à Computação.
