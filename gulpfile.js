@@ -1,17 +1,17 @@
-'use strict';
-
-const gulp  = require('gulp');
-const less  = require('gulp-less');
-const jsmin  = require('gulp-jsmin');
-const concat = require('gulp-concat');
-const rename = require('gulp-rename');
-const notify = require('gulp-notify');
-const nodemon = require('gulp-nodemon');
-const uglifycss = require('gulp-uglifycss');
-const browserSync = require('browser-sync').create();
+const gulp          = require('gulp');
+const less          = require('gulp-less');
+// const jsmin         = require('gulp-jsmin');
+const concat        = require('gulp-concat');
+const rename        = require('gulp-rename');
+const notify        = require('gulp-notify');
+const nodemon       = require('gulp-nodemon');
+const uglifycss     = require('gulp-uglifycss');
+const webpack       = require('webpack');
+const webpackStream = require('webpack-stream');
+const webpackConfig = require('./webpack.config.js');
+const browserSync   = require('browser-sync').create();
 
 let reload = browserSync.reload;
-
 let sources = {
     less: [
         './assets/dev/less/reset.less',
@@ -36,8 +36,8 @@ let sources = {
     }, 
     js: [
         // './assets/dev/js/calc/calculos-estatisticos.js',
-        // './assets/dev/js/calc/application.js',
-        // './assets/dev/js/calc/chart.module.js'
+        './assets/dev/js/calc/application.js',
+        // './assets/dev/js/calc/chart.module.js',
         './assets/dev/js/default.js'
     ],
     watch: {
@@ -86,16 +86,14 @@ function libStyle() {
 
 function script() {
     return gulp.src(sources.js)
-        .pipe(concat('build.js'))
-        .pipe(jsmin())
-        .pipe(rename({ suffix: '.min' }))
+        .pipe(webpackStream(webpackConfig), webpack)
+        //.pipe(debug({ title: 'webpack:' }))
         .pipe(gulp.dest(sources.path.js));
 }
 
 function style() {
     return gulp.src(sources.less)
-        .pipe(concat('build.css'))
-        // .pipe(less().on('error', less.logError))
+        .pipe(concat('bundle.css'))
         .pipe(less())
         .pipe(uglifycss({
             'maxLineLen': 300,
@@ -131,7 +129,7 @@ function watchFile() {
     gulp.watch(sources.watch.less, style);
     gulp.watch(sources.watch.html).on('change', reload);
     gulp.watch(sources.watch.js, script).on('change', reload);
-    gulp.src(sources.path.js + 'build.min.js')
+    gulp.src(sources.path.js + 'bundle.min.js')
         .pipe(notify({ message: 'Gulp is Watching. Happy Coding!' }));
 }
 
