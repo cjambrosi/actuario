@@ -20,26 +20,26 @@ Simples aplicação demonstrativa de cálculos estatísticos, desenvolvido para 
 
 ```bash
 ├── assets // sadsadasd
-│  ├── dev
-│  │  ├── js
-│  │  │  ├── calc
-│  │  │  │  ├──
-│  │  │  │  ├──
-│  │  │  │  └──
-│  │  │  └── default.js
-│  │  └── less
-│  │     ├──
-│  │     ├──
-│  │     └──
-│  ├── fonts
-│  ├── images
-│  └── pub
-│     ├── css
-│     │  ├──
-│     │  └──
-│     └── js
-│        ├──
-│        └──
+│   ├── dev
+│   │   ├── js
+│   │   │   ├── calc
+│   │   │   │   ├──
+│   │   │   │   ├──
+│   │   │   │   └──
+│   │   │   └── default.js
+│   │   └── less
+│   │       ├──
+│   │       ├──
+│   │       └──
+│   ├── fonts
+│   ├── images
+│   └── pub
+│       ├── css
+│       │   ├──
+│       │   └──
+│       └── js
+│           ├──
+│           └──
 ├── .gitignore
 ├── gulpfile.js
 ├── gulpfile.json
