@@ -1,0 +1,120 @@
+.navbar-fixed {
+
+	.-fontlogo {
+		cursor: default;
+		font-weight: 700;
+	}
+}
+
+.-sectiongrid {
+	padding: 20px 10px;
+
+	.-btnsinsertblock {
+		margin-top: 25px;
+	}
+
+	.-btnscard {
+		margin-right: 15px;
+		max-width: 132px;
+		width: 100%;
+	
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.-titlecard {
+		font-size: 1.8em;
+		text-align: center;
+		margin-bottom: 25px;
+		
+		&:after {
+			content: '';
+			display: block;
+			width: 100px;
+			height: 3px;
+			background: #757575;
+			margin: 6px auto;
+		}
+	}
+
+	.-areaimage{
+		height: 176px;
+		width: 100%;
+		display: flex;
+		background: url('https://user-images.githubusercontent.com/9125404/82073813-2822c800-96b0-11ea-8380-dea59e552a12.jpg') center/cover;
+	}
+
+	.-itemresult {
+		padding: 8px 0;
+
+		&:first-child {
+			padding-top: 16px;
+		}
+	}
+}
+
+.-menumobile {
+	padding: 20px 0;
+
+	.-mobilelogoblock {
+		margin-bottom: 20px;
+	}
+
+	.-mobilelogo {
+		width: 50px;
+	}
+}
+
+// .-hidden {
+// 	display: none;
+// }
+
+.-margincard {
+	margin: 25px 0;
+}
+
+.-backhovermenu {
+	background-color: rgba(0,0,0,0.1);
+	outline: none;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 4px;
+}
+
+footer {
+
+	.footer-copyright {
+		padding: 22px 0;
+	
+		.chip {
+			margin-bottom: 0;
+		}
+	}
+
+	.-textfooter {
+		font-size: 16px;
+	}
+
+	.-githubicon {
+		font-size: 20px;
+		margin-right: 5px;
+	}
+}
+
+@media only screen and (max-width: 1120px) {
+	.hide-on-med-and-down {
+		display: none !important;
+	}
+
+	nav a.sidenav-trigger {
+		display: block;
+	} 
+}
