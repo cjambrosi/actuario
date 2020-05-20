@@ -1,5 +1,5 @@
 import { sprintf } from 'sprintf-js';
-import {chartModule} from './chart.module';
+import { chartModule } from './chart.module';
 
 /** Entrada dos Dados **/
 let valores = document.getElementById('text-calc');
@@ -19,13 +19,11 @@ btn_calc.addEventListener('click', () => {
 /** Gera a Tabela **/
 function frequencyModule(vals) {
   let totalSum = vals.reduce((a, b) => { return a + b });
-  let media = totalSum / vals.length;
   let intervals = calcIntervals(vals);
-  let midPoint;
+  let acumulatedFrequency = 0;
 
   let tableInfo = intervals.map((interval) => {
     let min = interval.min, max = interval.max;
-
     return {
       interval: sprintf('%03d ├─ %03d', min, max),
       midPoint: (min + max) / 2,
@@ -40,7 +38,6 @@ function frequencyModule(vals) {
   let totalFrequency = tableInfo.map((num) => {
     return num.frequency;
   }).reduce((a, b) => { return a + b; });
-  let acumulatedFrequency = 0;
 
   tableInfo.map((e) => {
     let frequencyPercent = Math.min(e.frequency * 100 / totalFrequency, 100.0);
@@ -111,13 +108,13 @@ function calcIntervals(vals) {
 
 /** Cálculos Estatísticos **/
 function infoModule(vals) {
+  let media = calculaMediaAritmetica(vals);
+  let desvios = calculaDesvios(vals, media);
   vals = vals || [];
 
   document
     .getElementById('conjunto')
     .innerHTML = sprintf(` %s `, vals.join(', '));
-
-  let media = calculaMediaAritmetica(vals);
 
   document
     .getElementById('media_aritmetica')
@@ -134,8 +131,6 @@ function infoModule(vals) {
   document
     .getElementById('moda')
     .innerHTML = calculaModa(vals);
-
-  let desvios = calculaDesvios(vals, media);
 
   document
     .getElementById('desvio_populacional')
@@ -165,7 +160,7 @@ function infoModule(vals) {
 function calculaDesvios(vals, media) {
   let cals = vals.map(num => Math.abs(num - media) ** 2.0 ).reduce((a, b) => a + b );
 
-  return {populacional: (cals / vals.length) ** 0.5, amostral: (cals / (vals.length - 1))  ** 0.5}
+  return { populacional: (cals / vals.length) ** 0.5, amostral: (cals / (vals.length - 1))  ** 0.5 }
 }
 
 function calculaVariaciaAmostral(desvio) {

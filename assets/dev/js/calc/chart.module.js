@@ -1,5 +1,5 @@
-var _chart1 = null,
-  _chart2 = null;
+let _chart1 = null;
+let _chart2 = null;
 
 export function chartModule(vals) {
   createHistogram(vals);

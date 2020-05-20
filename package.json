@@ -41,7 +41,6 @@
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
-    "gulp-jsmin": "^0.1.5",
     "gulp-less": "^4.0.1",
     "gulp-nodemon": "^2.5.0",
     "gulp-notify": "^3.2.0",

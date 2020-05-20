@@ -1,2 +1,2 @@
-import Chart from 'chart.js'
-import './calculos-estatisticos';
+import Chart from 'chart.js';
+import './statistical-calculations';

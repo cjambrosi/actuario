@@ -40,7 +40,6 @@ function libStyle() {
 function script() {
     return gulp.src(sources().js)
         .pipe(webpackStream(webpackConfig), webpack)
-        //.pipe(debug({ title: 'webpack:' }))
         .pipe(gulp.dest(sources().path.js));
 }
 
