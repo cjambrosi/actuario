@@ -19,37 +19,37 @@ Simples aplicação demonstrativa de cálculos estatísticos, desenvolvido para 
 ## Hierarquia da aplicação
 
 ```bash
-├─ assets // sadsadasd
-|  ├─ dev
-|  |  ├─ js
-|  |  |  ├─ calc
-|  |  |  |  ├─
-|  |  |  |  ├─
-|  |  |  |  └─
-|  |  |  └─ default.js
-|  |  └─ less
-|  |     ├─
-|  |     ├─
-|  |     └─
-|  ├─ fonts
-|  ├─ images
-|  └─ pub
-|     ├─ css
-|     |  ├─
-|     |  └─
-|     └─ js
-|        ├─
-|        └─
-├─ .gitignore
-├─ gulpfile.js
-├─ gulpfile.json
-├─ index.hml
-├─ LICENSE
-├─ package-lock.json
-├─ package.json
-├─ README.md
-├─ server.js
-└─ webpack.config.js
+├── assets // sadsadasd
+│  ├── dev
+│  │  ├── js
+│  │  │  ├── calc
+│  │  │  │  ├──
+│  │  │  │  ├──
+│  │  │  │  └──
+│  │  │  └── default.js
+│  │  └── less
+│  │     ├──
+│  │     ├──
+│  │     └──
+│  ├── fonts
+│  ├── images
+│  └── pub
+│     ├── css
+│     │  ├──
+│     │  └──
+│     └── js
+│        ├──
+│        └──
+├── .gitignore
+├── gulpfile.js
+├── gulpfile.json
+├── index.hml
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── README.md
+├── server.js
+└── webpack.config.js
 ```
 
 <!-- https://github.com/kylelobo/The-Documentation-Compendium -->
