@@ -18,7 +18,7 @@ Simples aplicação demonstrativa de cálculos estatísticos, desenvolvido para 
 
 ## Hierarquia da aplicação
 
-``` bash
+```bash
 ├─ assets // sadsadasd
 |  ├─ dev
 |  |  ├─ js
