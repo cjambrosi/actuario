@@ -94,6 +94,26 @@
 	}
 }
 
+.-backtotop {
+	position: fixed;
+	right: 55px;
+	bottom: 15%;
+	width: 40px;
+	height: 40px;
+	z-index: 1000;
+
+	.-btnbacktotop {
+		transition: opacity .5s, visibility .5s;
+		opacity: 0;
+		visibility: hidden;
+
+		&.show {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
 .-margincard {
 	margin: 25px 0;
 }
