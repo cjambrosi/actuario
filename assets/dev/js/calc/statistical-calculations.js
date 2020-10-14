@@ -3,16 +3,19 @@ import { chartModule } from './chart.module';
 
 /** Entrada dos Dados **/
 let valores = document.getElementById('text-calc');
-let btn_calc = document.getElementById('btn_calc');
+let btnCalc = document.getElementById('btnCalc');
+let btnReset = document.getElementById('resetActuario');
 let graphVals = {
-	intervals: [],
-	fi: [],
-	xi: [],
-	fac: [],
-	mediaIntervalsH: 0
+  intervals: [],
+  fi: [],
+  xi: [],
+  fac: [],
+  mediaIntervalsH: 0
 }
 
-btn_calc.addEventListener('click', () => {
+btnReset.addEventListener('click', cleanApp);
+
+btnCalc.addEventListener('click', () => {
   let inputVals = valores.value.trim().split(/\s+/).map(Number);
   let sortedVals = inputVals.slice(0).sort((a, b) => {
     return parseInt(a || 0, 10) - parseInt(b || 0, 10);
@@ -21,7 +24,8 @@ btn_calc.addEventListener('click', () => {
   frequencyModule(inputVals);
   chartModule(graphVals);
   infoModule(sortedVals);
-  
+  showContents(true);
+
   graphVals = {
     intervals: [],
     fi: [],
@@ -30,6 +34,37 @@ btn_calc.addEventListener('click', () => {
     mediaIntervalsH: 0
   }
 });
+
+function showContents(visible) {
+  const $sections = $('.-sectionhidden');
+
+  if (visible) {
+    $sections.addClass('-hiddentovisible');
+    setTimeout(() => {
+      $sections.addClass('-visible');
+    }, 150);
+  } else {
+    $sections.removeClass('-visible');
+    setTimeout(() => {
+      $sections.removeClass('-hiddentovisible');
+    }, 150);
+  }
+}
+
+function cleanApp() {
+  showContents(false);
+  const textArea = $('#text-calc');
+  textArea.val('');
+  textArea.siblings().removeClass('active');
+
+  graphVals = {
+    intervals: [],
+    fi: [],
+    xi: [],
+    fac: [],
+    mediaIntervalsH: 0
+  }
+}
 
 /** Gera a Tabela **/
 function frequencyModule(vals) {
@@ -88,11 +123,11 @@ function frequencyModule(vals) {
       <td>%.2f</td>
     </tr>
     `, tableRow.interval,
-       tableRow.frequency,
-       tableRow.midPoint,
-       tableRow.acumulatedFrequency,
-       tableRow.frequencyPercent,
-       tableRow.acumulatedFrequencyPercent
+      tableRow.frequency,
+      tableRow.midPoint,
+      tableRow.acumulatedFrequency,
+      tableRow.frequencyPercent,
+      tableRow.acumulatedFrequencyPercent
     ));
   }
 
@@ -107,7 +142,7 @@ function frequencyModule(vals) {
     </tr>
   `, totalSum, totalFrequency, 100.0));
 
-  document.getElementById('frequency_table').innerHTML = tableHTML.join("\n");
+  document.getElementById('frequencyTableBody').innerHTML = tableHTML.join("\n");
 }
 
 function calcIntervals(vals) {
@@ -116,14 +151,14 @@ function calcIntervals(vals) {
   });
   let maxNum = intervals[intervals.length - 1];
   let minNum = intervals[0];
-  let groupCount  = Math.round(1 + 3.22 * Math.log10(intervals.length));
+  let groupCount = Math.round(1 + 3.22 * Math.log10(intervals.length));
   let groupLength = (maxNum - minNum) / groupCount;
   groupLength = parseInt(groupLength) + 1;
   graphVals.mediaIntervalsH = groupLength;
   let result = [], n = minNum;
 
   for (let i = 0; i < groupCount; i++) {
-    result[i] = {min: Math.round(n), max: Math.round(Math.min(n + groupLength))}
+    result[i] = { min: Math.round(n), max: Math.round(Math.min(n + groupLength)) }
     n += groupLength;
   }
 
@@ -190,9 +225,9 @@ function infoModule(vals) {
 }
 
 function calculaDesvios(vals, media) {
-  let cals = vals.map(num => Math.abs(num - media) ** 2.0 ).reduce((a, b) => a + b );
+  let cals = vals.map(num => Math.abs(num - media) ** 2.0).reduce((a, b) => a + b);
 
-  return { populacional: (cals / vals.length) ** 0.5, amostral: (cals / (vals.length - 1))  ** 0.5 }
+  return { populacional: (cals / vals.length) ** 0.5, amostral: (cals / (vals.length - 1)) ** 0.5 }
 }
 
 function calculaVariaciaAmostral(desvio) {
@@ -239,8 +274,8 @@ function calculaModa(vals) {
   let counted = [];
   let answer = [], maxModa = -1;
 
-  for (var i = min; i<= max; i++) {
-    counted[i] = {val: i, count: 0};
+  for (var i = min; i <= max; i++) {
+    counted[i] = { val: i, count: 0 };
   }
 
   for (let num of vals) {
