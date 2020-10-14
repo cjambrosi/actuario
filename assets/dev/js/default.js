@@ -8,6 +8,7 @@ function start() {
 
   const btnBackToTop = document
     .querySelector('#backToTop');
+
   btnBackToTop.addEventListener('click', backToTop);
 }
 
@@ -31,9 +32,9 @@ const listenScroll = () => {
     var height = 200;
 
     if (scrollTop > height) {
-      $button.addClass('show');
+      $button.addClass('-show');
     } else {
-      $button.removeClass('show');
+      $button.removeClass('-show');
     }
   });
 }

@@ -83,7 +83,7 @@
 							<label for="text-calc">Digite os valores separados por expaço</label>
 							<small>Ex: 30 83 54 44 28 19 39 9 8 22</small>
 							<div class="center-align -btnsinsertblock">
-								<button id="btn_calc"
+								<button id="btnCalc"
 									class="grey darken-2 btn btn-large waves-effect waves-light -btnscard">Calcular</button>
 								<button id="resetActuario"
 									class="grey darken-1 btn btn-large waves-effect waves-light -btnscard">Limpar</button>
@@ -93,10 +93,10 @@
 				</div>
 			</section>
 
-			<section id="distriFreque" class="row z-depth-2 scrollspy -sectiongrid -margincard -hidden">
+			<section id="distriFreque" class="row z-depth-2 scrollspy -sectiongrid -margincard -sectionhidden">
 				<div class="col s12">
 					<h4 class="center-align -titlecard">Tabela de Distribuição de Frequência</h4>
-					<table class="tableStat responsive-table highlight centered">
+					<table class="-tableStat responsive-table highlight centered">
 						<thead>
 							<tr>
 								<th class="tooltipped" data-position="top" data-tooltip="Intervalo de Classe">
@@ -119,12 +119,12 @@
 								</th>
 							</tr>
 						</thead>
-						<tbody id="frequency_table"></tbody>
+						<tbody id="frequencyTableBody"></tbody>
 					</table>
 				</div>
 			</section>
 
-			<section id="analiDados" class="row z-depth-2 scrollspy -sectiongrid -margincard -hidden">
+			<section id="analiDados" class="row z-depth-2 scrollspy -sectiongrid -margincard -sectionhidden">
 				<div class="col s12">
 					<h4 class="center-align -titlecard">Resultados da Análise de Dados</h4>
 					<div class="col s12">
@@ -226,7 +226,7 @@
 				</div>
 			</section>
 
-			<section id="graficos" class="row z-depth-2 scrollspy -sectiongrid -margincard -hidden">
+			<section id="graficos" class="row z-depth-2 scrollspy -sectiongrid -margincard -sectionhidden">
 				<div class="col s12">
 					<h4 class="center-align -titlecard">Gráficos</h4>
 					<div class="col s12 m6">

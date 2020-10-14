@@ -66,6 +66,14 @@
 	}
 }
 
+.-tableStat {
+	tbody tr {
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+}
+
 .-tblconjunto {
 	margin-top: 0;
 
@@ -107,7 +115,7 @@
 		opacity: 0;
 		visibility: hidden;
 
-		&.show {
+		&.-show {
 			opacity: 1;
 			visibility: visible;
 		}
@@ -121,6 +129,22 @@
 .-backhovermenu {
 	background-color: rgba(0,0,0,0.1);
 	outline: none;
+}
+
+.-sectionhidden {
+	transition: opacity .5s linear, visibility .5s linear;
+	opacity: 0;
+	display: none;
+	visibility: hidden;
+
+	&.-hiddentovisible {
+		display: block;
+	}
+
+	&.-visible {
+		opacity: 1;
+		visibility: visible;
+	}
 }
 
 ::-webkit-scrollbar {
