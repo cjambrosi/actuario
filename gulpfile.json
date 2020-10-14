@@ -1,49 +1,49 @@
 {
-    "less": [
-        "./assets/dev/less/reset.less",
-        "./assets/dev/less/default.less"
+  "less": [
+    "./assets/dev/less/reset.less",
+    "./assets/dev/less/default.less"
+  ],
+  "lib": {
+    "css": [
+      "./node_modules/materialize-css/dist/css/materialize.min.css",
+      "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
     ],
-    "lib": {
-        "css": [
-            "./node_modules/materialize-css/dist/css/materialize.min.css",
-            "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-        ],
-        "js": [
-            "./node_modules/jquery/dist/jquery.min.js",
-            "./node_modules/materialize-css/dist/js/materialize.min.js",
-            "./node_modules/@fortawesome/fontawesome-free/js/all.min.js"
-        ]
-    }, 
     "js": [
-        "./assets/dev/js/calc/application.js",
-        "./assets/dev/js/default.js"
+      "./node_modules/jquery/dist/jquery.min.js",
+      "./node_modules/materialize-css/dist/js/materialize.min.js",
+      "./node_modules/@fortawesome/fontawesome-free/js/all.min.js"
+    ]
+  }, 
+  "js": [
+    "./assets/dev/js/calc/application.js",
+    "./assets/dev/js/default.js"
+  ],
+  "watch": {
+    "less": [
+      "./assets/dev/less/**/*.less"
     ],
-    "watch": {
-        "less": [
-            "./assets/dev/less/**/*.less"
-        ],
-        "js": [
-            "./assets/dev/js/**/*.js"
-        ],
-        "html": [
-            "./*.html"
-        ]
-    },
-    "path": {
-        "css": [
-            "./assets/pub/css/"
-        ],
-        "js": [
-            "./assets/pub/js/"
-        ]
-    },
-    "server": {
-        "url": "localhost:8088",
-        "port": "8090",
-        "server_file": "server.js",
-        "ignore": [
-            "gulpfile.js",
-            "node_modules/"
-        ]
-    }
+    "js": [
+      "./assets/dev/js/**/*.js"
+    ],
+    "html": [
+      "./*.html"
+    ]
+  },
+  "path": {
+    "css": [
+      "./assets/pub/css/"
+    ],
+    "js": [
+      "./assets/pub/js/"
+    ]
+  },
+  "server": {
+    "url": "localhost:8088",
+    "port": "8090",
+    "server_file": "server.js",
+    "ignore": [
+      "gulpfile.js",
+      "node_modules/"
+    ]
+  }
 }

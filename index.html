@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png">
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png">
 	<title>Actuarĭu</title>
-	<link rel="icon" type="image/png" sizes="16x16" href="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png">
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/pub/css/lib.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/pub/css/bundle.min.css">
 </head>
+
 <body>
 	<header class="navbar-fixed">
 		<nav class="grey darken-2">
@@ -26,9 +30,8 @@
 				</ul>
 
 				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
 				<span class="-fontlogo brand-logo center">Actuarĭu</span>
-				
+
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li>
 						<a href="#analiDados">Resultados da Análise de Dados</a>
@@ -45,7 +48,9 @@
 	<ul id="slide-out" class="sidenav -menumobile">
 		<li>
 			<div class="center -mobilelogoblock">
-				<img class="responsive-img -mobilelogo" src="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png" alt="">
+				<img class="responsive-img -mobilelogo"
+					src="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png"
+					alt="">
 			</div>
 		</li>
 		<li>
@@ -78,8 +83,10 @@
 							<label for="text-calc">Digite os valores separados por expaço</label>
 							<small>Ex: 30 83 54 44 28 19 39 9 8 22</small>
 							<div class="center-align -btnsinsertblock">
-								<button id="btn_calc" class="grey darken-2 btn btn-large waves-effect waves-light -btnscard">Calcular</button>
-								<button id="resetActuario" class="grey darken-1 btn btn-large waves-effect waves-light -btnscard">Limpar</button>
+								<button id="btn_calc"
+									class="grey darken-2 btn btn-large waves-effect waves-light -btnscard">Calcular</button>
+								<button id="resetActuario"
+									class="grey darken-1 btn btn-large waves-effect waves-light -btnscard">Limpar</button>
 							</div>
 						</div>
 					</div>
@@ -92,12 +99,24 @@
 					<table class="tableStat responsive-table highlight centered">
 						<thead>
 							<tr>
-								<th class="tooltipped" data-position="top" data-tooltip="Intervalo de Classe">X</th>
-								<th class="tooltipped" data-position="top" data-tooltip="Frequência Absoluta do Intervalo">F<small>i</small></th>
-								<th class="tooltipped" data-position="top" data-tooltip="Ponto Médio do Intervalo">X<small>i</small></th>
-								<th class="tooltipped" data-position="top" data-tooltip="Frequência Acumulada">Fac</th>
-								<th class="tooltipped" data-position="top" data-tooltip="Frequência Relativa">F<small>i (%)</small></th>
-								<th class="tooltipped" data-position="top" data-tooltip="Frequência Acumulada Relativa">FacR<small> (%)</small></th>
+								<th class="tooltipped" data-position="top" data-tooltip="Intervalo de Classe">
+									X
+								</th>
+								<th class="tooltipped" data-position="top" data-tooltip="Frequência Absoluta do Intervalo">
+									F<small>i</small>
+								</th>
+								<th class="tooltipped" data-position="top" data-tooltip="Ponto Médio do Intervalo">
+									X<small>i</small>
+								</th>
+								<th class="tooltipped" data-position="top" data-tooltip="Frequência Acumulada">
+									Fac
+								</th>
+								<th class="tooltipped" data-position="top" data-tooltip="Frequência Relativa">
+									F<small>i (%)</small>
+								</th>
+								<th class="tooltipped" data-position="top" data-tooltip="Frequência Acumulada Relativa">
+									FacR<small>(%)</small>
+								</th>
 							</tr>
 						</thead>
 						<tbody id="frequency_table"></tbody>
@@ -113,7 +132,7 @@
 						<span id="conjunto"></span>
 					</div>
 					<div class="col s12 m6 l6">
-						<table class="">
+						<table class="-tblconjunto">
 							<tbody>
 								<tr>
 									<td>
@@ -159,7 +178,7 @@
 						</table>
 					</div>
 					<div class="col s12 m6 l6">
-						<table>
+						<table class="-tblconjunto">
 							<tbody>
 								<tr>
 									<td>
@@ -224,19 +243,21 @@
 					</div>
 				</div>
 			</section>
-			
+
 		</div>
 	</main>
 
 	<footer class="grey darken-2">
 		<div class="footer-copyright">
 			<div class="container cop_footer center grey-text text-lighten-4 -textfooter">
-				<small>© 2017</small>
 				<div class="chip grey darken-1">
-					<a href="https://github.com/cjambrosi" class="tooltipped white-text -textfooter" data-position="top" data-tooltip="GitHub/cjambrosi" target="_blank">
-						<i class="fab fa-github -githubicon"></i>Cristian J. Ambrosi
+					<a href="https://github.com/cjambrosi" class="tooltipped white-text -textfooter" data-position="top"
+						data-tooltip="GitHub/cjambrosi" target="_blank">
+						<i class="fab fa-github -githubicon"></i>
+						Cristian J. Ambrosi
 					</a>
 				</div>
+				<small class="-smllcop">© 2017</small>
 			</div>
 		</div>
 	</footer>
@@ -244,4 +265,5 @@
 	<script src="assets/pub/js/lib.min.js"></script>
 	<script src="assets/pub/js/bundle.min.js"></script>
 </body>
+
 </html>
