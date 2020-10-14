@@ -4,6 +4,13 @@ import { chartModule } from './chart.module';
 /** Entrada dos Dados **/
 let valores = document.getElementById('text-calc');
 let btn_calc = document.getElementById('btn_calc');
+let graphVals = {
+	intervals: [],
+	fi: [],
+	xi: [],
+	fac: [],
+	mediaIntervalsH: 0
+}
 
 btn_calc.addEventListener('click', () => {
   let inputVals = valores.value.trim().split(/\s+/).map(Number);
@@ -12,8 +19,16 @@ btn_calc.addEventListener('click', () => {
   });
 
   frequencyModule(inputVals);
-  chartModule(inputVals);
+  chartModule(graphVals);
   infoModule(sortedVals);
+  
+  graphVals = {
+    intervals: [],
+    fi: [],
+    xi: [],
+    fac: [],
+    mediaIntervalsH: 0
+  }
 });
 
 /** Gera a Tabela **/
@@ -21,9 +36,12 @@ function frequencyModule(vals) {
   let totalSum = vals.reduce((a, b) => { return a + b });
   let intervals = calcIntervals(vals);
   let acumulatedFrequency = 0;
+  let arrIntervals = [];
 
   let tableInfo = intervals.map((interval) => {
     let min = interval.min, max = interval.max;
+    arrIntervals.push(min);
+    arrIntervals.push(max);
     return {
       interval: sprintf('%03d ├─ %03d', min, max),
       midPoint: (min + max) / 2,
@@ -34,6 +52,8 @@ function frequencyModule(vals) {
       })
     };
   });
+
+  graphVals.intervals.push(filterAndSort(arrIntervals));
 
   let totalFrequency = tableInfo.map((num) => {
     return num.frequency;
@@ -54,6 +74,10 @@ function frequencyModule(vals) {
   let tableHTML = [];
 
   for (let tableRow of tableInfo) {
+    graphVals.fi.push(tableRow.frequency);
+    graphVals.xi.push(tableRow.midPoint);
+    graphVals.fac.push(tableRow.acumulatedFrequency);
+
     tableHTML.push(sprintf(`
     <tr>
       <td>%3s</td>
@@ -95,7 +119,7 @@ function calcIntervals(vals) {
   let groupCount  = Math.round(1 + 3.22 * Math.log10(intervals.length));
   let groupLength = (maxNum - minNum) / groupCount;
   groupLength = parseInt(groupLength) + 1;
-  //window.document.write(groupLength); 
+  graphVals.mediaIntervalsH = groupLength;
   let result = [], n = minNum;
 
   for (let i = 0; i < groupCount; i++) {
@@ -104,6 +128,14 @@ function calcIntervals(vals) {
   }
 
   return result;
+}
+
+function filterAndSort(arr) {
+  arr = arr.filter((elem, index, self) => {
+    return index == self.indexOf(elem);
+  });
+
+  return arr.sort((a, b) => { return a - b; });
 }
 
 /** Cálculos Estatísticos **/

@@ -66,9 +66,33 @@
 	}
 }
 
-// .-hidden {
-// 	display: none;
-// }
+.-tblconjunto {
+	margin-top: 0;
+
+	@media (min-width: 601px) {
+		margin-top: 10px;
+
+		tr {
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+
+	tr {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+
+		td {
+			display: inline-block;
+
+			&:last-child {
+				padding-right: 16px;
+			}
+		}
+	}
+}
 
 .-margincard {
 	margin: 25px 0;
@@ -95,7 +119,7 @@ footer {
 		padding: 22px 0;
 	
 		.chip {
-			margin-bottom: 0;
+			margin-bottom: 12px;
 		}
 	}
 
@@ -106,6 +130,10 @@ footer {
 	.-githubicon {
 		font-size: 20px;
 		margin-right: 5px;
+	}
+
+	.-smllcop {
+		display: block;
 	}
 }
 

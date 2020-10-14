@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png">
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png">
 	<title>Actuarĭu</title>
-	<link rel="icon" type="image/png" sizes="16x16" href="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png">
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/pub/css/lib.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/pub/css/bundle.min.css">
 </head>
+
 <body>
 	<header class="navbar-fixed">
 		<nav class="grey darken-2">
@@ -26,9 +30,8 @@
 				</ul>
 
 				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
 				<span class="-fontlogo brand-logo center">Actuarĭu</span>
-				
+
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li>
 						<a href="#analiDados">Resultados da Análise de Dados</a>
@@ -45,7 +48,9 @@
 	<ul id="slide-out" class="sidenav -menumobile">
 		<li>
 			<div class="center -mobilelogoblock">
-				<img class="responsive-img -mobilelogo" src="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png" alt="">
+				<img class="responsive-img -mobilelogo"
+					src="https://user-images.githubusercontent.com/9125404/82073371-87cca380-96af-11ea-9c1e-55ec559e5432.png"
+					alt="">
 			</div>
 		</li>
 		<li>
@@ -65,7 +70,7 @@
 	<main>
 		<div class="container">
 
-			<section id="calcular" class="row z-depth-2 -sectiongrid -margincard">
+			<section id="calcular" class="row z-depth-2 scrollspy -sectiongrid -margincard">
 				<div class="col s12">
 					<div class="card">
 						<div class="card-image">
@@ -75,28 +80,43 @@
 					<div class="row">
 						<div class="col s12 input-field">
 							<textarea id="text-calc" class="materialize-textarea"></textarea>
-							<label for="text-calc">Digite seus dados aqui. Ex: 30 83 54 44 28 19 39 9 8 22</label>
+							<label for="text-calc">Digite os valores separados por expaço</label>
+							<small>Ex: 30 83 54 44 28 19 39 9 8 22</small>
 							<div class="center-align -btnsinsertblock">
-								<button id="btn_calc" class="grey darken-2 btn btn-large waves-effect waves-light -btnscard">Calcular</button>
-								<button id="resetActuario" class="grey darken-1 btn btn-large waves-effect waves-light -btnscard">Limpar</button>
+								<button id="btn_calc"
+									class="grey darken-2 btn btn-large waves-effect waves-light -btnscard">Calcular</button>
+								<button id="resetActuario"
+									class="grey darken-1 btn btn-large waves-effect waves-light -btnscard">Limpar</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section id="distriFreque" class="row z-depth-2 -sectiongrid -margincard -hidden">
+			<section id="distriFreque" class="row z-depth-2 scrollspy -sectiongrid -margincard -hidden">
 				<div class="col s12">
 					<h4 class="center-align -titlecard">Tabela de Distribuição de Frequência</h4>
 					<table class="tableStat responsive-table highlight centered">
 						<thead>
 							<tr>
-								<th class="tooltipped" data-position="top" data-tooltip="Intervalo de Classe">X</th>
-								<th class="tooltipped" data-position="top" data-tooltip="Frequência Absoluta do Intervalo">F<small>i</small></th>
-								<th class="tooltipped" data-position="top" data-tooltip="Ponto Médio do Intervalo">X<small>i</small></th>
-								<th class="tooltipped" data-position="top" data-tooltip="Frequência Acumulada">Fac</th>
-								<th class="tooltipped" data-position="top" data-tooltip="Frequência Relativa">F<small>i (%)</small></th>
-								<th class="tooltipped" data-position="top" data-tooltip="Frequência Acumulada Relativa">FacR<small> (%)</small></th>
+								<th class="tooltipped" data-position="top" data-tooltip="Intervalo de Classe">
+									X
+								</th>
+								<th class="tooltipped" data-position="top" data-tooltip="Frequência Absoluta do Intervalo">
+									F<small>i</small>
+								</th>
+								<th class="tooltipped" data-position="top" data-tooltip="Ponto Médio do Intervalo">
+									X<small>i</small>
+								</th>
+								<th class="tooltipped" data-position="top" data-tooltip="Frequência Acumulada">
+									Fac
+								</th>
+								<th class="tooltipped" data-position="top" data-tooltip="Frequência Relativa">
+									F<small>i (%)</small>
+								</th>
+								<th class="tooltipped" data-position="top" data-tooltip="Frequência Acumulada Relativa">
+									FacR<small>(%)</small>
+								</th>
 							</tr>
 						</thead>
 						<tbody id="frequency_table"></tbody>
@@ -104,75 +124,109 @@
 				</div>
 			</section>
 
-			<section id="analiDados" class="row z-depth-2 -sectiongrid -margincard -hidden">
+			<section id="analiDados" class="row z-depth-2 scrollspy -sectiongrid -margincard -hidden">
 				<div class="col s12">
 					<h4 class="center-align -titlecard">Resultados da Análise de Dados</h4>
 					<div class="col s12">
 						<strong class="-vartyperesult">Conjunto Ordenado:</strong>
 						<span id="conjunto"></span>
 					</div>
-					<!-- <div class="col s12 m6 l6">
-						<h5>Média Aritmética: <span id="media_aritmetica" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-						<h5>Média Geométrica (G): <span id="media_geometrica" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-						<h5>Moda (mo): <span id="moda" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-						<h5>Mediana: <span id="mediana" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-						<h5>Desvio Padrão Amostral (s): <span id="desvio_amostral" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
+					<div class="col s12 m6 l6">
+						<table class="-tblconjunto">
+							<tbody>
+								<tr>
+									<td>
+										<strong class="-vartyperesult">Média Aritmética:</strong>
+									</td>
+									<td>
+										<span id="media_aritmetica"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong class="-vartyperesult">Média Geométrica (G):</strong>
+									</td>
+									<td>
+										<span id="media_geometrica"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong class="-vartyperesult">Moda (mo):</strong>
+									</td>
+									<td>
+										<span id="moda"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong class="-vartyperesult">Mediana:</strong>
+									</td>
+									<td>
+										<span id="mediana"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong class="-vartyperesult">Desvio Padrão Amostral (s):</strong>
+									</td>
+									<td>
+										<span id="desvio_amostral"></span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 					<div class="col s12 m6 l6">
-						<h5>Variância Amostral (s²): <span id="variancia_amostral" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-						<h5>Desvio Padrão Populacional (σ): <span id="desvio_populacional" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-						<h5>Variância Populacional (σ²): <span id="variancia_populacional" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-						<h5>CV Amostral: <span id="coeficiente_variacao_amostral" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-						<h5>CV Populacional: <span id="coeficiente_variacao_populacional" class="anali-dados-font grey-text text-darken-2" >0</span></h5>
-					</div> -->
-					<ul class="col s12 m6 l6">
-						<li class="-itemresult">
-							<strong class="-vartyperesult">Média Aritmética:</strong>
-							<span id="media_aritmetica"></span>
-						</li>
-						<li class="-itemresult">
-							<strong class="-vartyperesult">Média Geométrica (G):</strong>
-							<span id="media_geometrica"></span>
-						</li>
-						<li class="-itemresult">
-							<strong class="-vartyperesult">Moda (mo):</strong>
-							<span id="moda"></span>
-						</li>
-						<li class="-itemresult">
-							<strong class="-vartyperesult">Mediana:</strong>
-							<span id="mediana"></span>
-						</li>
-						<li class="-itemresult">
-							<strong class="-vartyperesult">Desvio Padrão Amostral (s):</strong>
-							<span id="desvio_amostral"></span>
-						</li>
-					</ul>
-					<ul class="col s12 m6 l6">
-						<li class="-itemresult">
-							<strong class="-vartyperesult">Variância Amostral (s²):</strong>
-							<span id="variancia_amostral"></span>
-						</li>
-						<li class="-itemresult">
-							<strong class="-vartyperesult">Desvio Padrão Populacional (σ):</strong>
-							<span id="desvio_populacional"></span>
-						</li>
-						<li class="-itemresult">
-							<strong class="-vartyperesult">Variância Populacional (σ²):</strong>
-							<span id="variancia_populacional"></span>
-						</li>
-						<li class="-itemresult">
-							<strong class="-vartyperesult">CV Amostral:</strong>
-							<span id="coeficiente_variacao_amostral"></span>
-						</li>
-						<li class="-itemresult">
-							<strong class="-vartyperesult">CV Populacional:</strong>
-							<span id="coeficiente_variacao_populacional"></span>
-						</li>
-					</ul>
+						<table class="-tblconjunto">
+							<tbody>
+								<tr>
+									<td>
+										<strong class="-vartyperesult">Variância Amostral (s²):</strong>
+									</td>
+									<td>
+										<span id="variancia_amostral"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong class="-vartyperesult">Desvio Padrão Populacional (σ):</strong>
+									</td>
+									<td>
+										<span id="desvio_populacional"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong class="-vartyperesult">Variância Populacional (σ²):</strong>
+									</td>
+									<td>
+										<span id="variancia_populacional"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong class="-vartyperesult">CV Amostral:</strong>
+									</td>
+									<td>
+										<span id="coeficiente_variacao_amostral"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong class="-vartyperesult">CV Populacional:</strong>
+									</td>
+									<td>
+										<span id="coeficiente_variacao_populacional"></span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</section>
 
-			<section id="graficos" class="row z-depth-2 -sectiongrid -margincard -hidden">
+			<section id="graficos" class="row z-depth-2 scrollspy -sectiongrid -margincard -hidden">
 				<div class="col s12">
 					<h4 class="center-align -titlecard">Gráficos</h4>
 					<div class="col s12 m6">
@@ -183,21 +237,27 @@
 						<h5 class="grey-text text-darken-2 center-align">Polígono de Frequências</h5>
 						<canvas id="poligono_frequencia"></canvas>
 					</div>
+					<div class="col s12 m6">
+						<h5 class="grey-text text-darken-2 center-align">Ogiva</h5>
+						<canvas id="ogiva"></canvas>
+					</div>
 				</div>
 			</section>
-			
+
 		</div>
 	</main>
 
 	<footer class="grey darken-2">
 		<div class="footer-copyright">
 			<div class="container cop_footer center grey-text text-lighten-4 -textfooter">
-				<small>© 2017</small>
 				<div class="chip grey darken-1">
-					<a href="https://github.com/cjambrosi" class="tooltipped white-text -textfooter" data-position="top" data-tooltip="GitHub/cjambrosi" target="_blank">
-						<i class="fab fa-github -githubicon"></i>Cristian J. Ambrosi
+					<a href="https://github.com/cjambrosi" class="tooltipped white-text -textfooter" data-position="top"
+						data-tooltip="GitHub/cjambrosi" target="_blank">
+						<i class="fab fa-github -githubicon"></i>
+						Cristian J. Ambrosi
 					</a>
 				</div>
+				<small class="-smllcop">© 2017</small>
 			</div>
 		</div>
 	</footer>
@@ -205,4 +265,5 @@
 	<script src="assets/pub/js/lib.min.js"></script>
 	<script src="assets/pub/js/bundle.min.js"></script>
 </body>
+
 </html>

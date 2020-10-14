@@ -1,6 +1,9 @@
 const express = require('express');
-let port = process.env.PORT || 8088;
-let app = express();
+const PORT = process.env.PORT || 8088;
 
-app.use(express.static(__dirname + '/'));
-app.listen(port);
+let app = express();
+app.use(express.static(`${__dirname}/`));
+
+app.listen(PORT, () => {
+  console.log(`>> Server started!\n>> Port: ${PORT}`);
+});
