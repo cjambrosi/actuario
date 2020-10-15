@@ -6,6 +6,7 @@
   "lib": {
     "css": [
       "./node_modules/materialize-css/dist/css/materialize.min.css",
+      "./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2",
       "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
     ],
     "js": [

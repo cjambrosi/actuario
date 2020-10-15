@@ -31,12 +31,14 @@
   "dependencies": {
     "chart.js": "^2.9.3",
     "express": "^4.17.1",
-    "sprintf-js": "^1.1.2"
+    "sprintf-js": "^1.1.2",
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "jquery": "^3.5.1",
+    "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
-    "@fortawesome/fontawesome-free": "^5.15.1",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.12",
     "gulp": "^4.0.2",
@@ -46,8 +48,6 @@
     "gulp-notify": "^3.2.0",
     "gulp-rename": "^2.0.0",
     "gulp-uglifycss": "^1.1.0",
-    "jquery": "^3.5.1",
-    "materialize-css": "^1.0.0-rc.2",
     "popper.js": "^1.16.1",
     "webpack": "^4.44.2",
     "webpack-stream": "^5.2.1"
