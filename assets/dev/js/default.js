@@ -5,6 +5,7 @@ function start() {
   scrollSpy();
   tooltip();
   listenScroll();
+  openMenuMobile();
 
   const btnBackToTop = document
     .querySelector('#backToTop');
@@ -15,12 +16,14 @@ function start() {
 const scrollSpy = () => {
   const elements = document
     .querySelectorAll('.scrollspy');
+
   M.ScrollSpy.init(elements);
 }
 
 const tooltip = () => {
   const elements = document
     .querySelectorAll('.tooltipped');
+
   M.Tooltip.init(elements);
 }
 
@@ -43,4 +46,11 @@ const backToTop = () => {
   $('html, body').animate({
     scrollTop: 0
   }, '300');
+}
+
+const openMenuMobile = () => {
+  const elements = document
+    .querySelector('.sidenav');
+
+  M.Sidenav.init(elements);
 }
