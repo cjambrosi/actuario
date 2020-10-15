@@ -2,7 +2,7 @@ import { sprintf } from 'sprintf-js';
 import { chartModule } from './chart.module';
 
 /** Entrada dos Dados **/
-let valores = document.getElementById('text-calc');
+let valores = document.getElementById('textCalc');
 let btnCalc = document.getElementById('btnCalc');
 let btnReset = document.getElementById('resetActuario');
 let graphVals = {
@@ -16,6 +16,18 @@ let graphVals = {
 btnReset.addEventListener('click', cleanApp);
 
 btnCalc.addEventListener('click', () => {
+  let exprRegular = /([A-Za-z_])/;
+
+  if (exprRegular.test(valores.value)) {
+    M.toast({ html: 'Somente números e espaços!' });
+    return;
+  }
+
+  if (valores.value.length <= 0) {
+    M.toast({ html: 'Insira um valor válido!' });
+    return;
+  }
+
   let inputVals = valores.value.trim().split(/\s+/).map(Number);
   let sortedVals = inputVals.slice(0).sort((a, b) => {
     return parseInt(a || 0, 10) - parseInt(b || 0, 10);
@@ -34,37 +46,6 @@ btnCalc.addEventListener('click', () => {
     mediaIntervalsH: 0
   }
 });
-
-function showContents(visible) {
-  const $sections = $('.-sectionhidden');
-
-  if (visible) {
-    $sections.addClass('-hiddentovisible');
-    setTimeout(() => {
-      $sections.addClass('-visible');
-    }, 150);
-  } else {
-    $sections.removeClass('-visible');
-    setTimeout(() => {
-      $sections.removeClass('-hiddentovisible');
-    }, 150);
-  }
-}
-
-function cleanApp() {
-  showContents(false);
-  const textArea = $('#text-calc');
-  textArea.val('');
-  textArea.siblings().removeClass('active');
-
-  graphVals = {
-    intervals: [],
-    fi: [],
-    xi: [],
-    fac: [],
-    mediaIntervalsH: 0
-  }
-}
 
 /** Gera a Tabela **/
 function frequencyModule(vals) {
@@ -298,4 +279,38 @@ function calculaModa(vals) {
   }
 
   return answer.length > 0 ? answer.join(', ') : 'Amodal';
+}
+
+function showContents(visible) {
+  const $sections = $('.-sectionhidden');
+
+  if (visible) {
+    $sections.addClass('-hiddentovisible');
+    setTimeout(() => {
+      $sections.addClass('-visible');
+    }, 150);
+  } else {
+    $sections.removeClass('-visible');
+    setTimeout(() => {
+      $sections.removeClass('-hiddentovisible');
+    }, 150);
+  }
+}
+
+function cleanApp() {
+  const textCalc = $('#textCalc');
+  textCalc.val('');
+  textCalc.siblings().removeClass('active');
+
+  showContents(false);
+
+  graphVals = {
+    intervals: [],
+    fi: [],
+    xi: [],
+    fac: [],
+    mediaIntervalsH: 0
+  }
+
+  M.toast({ html: 'Actuarĭu reiniciado!' });
 }
