@@ -123,10 +123,10 @@ function createFrequencyPolygon(vals) {
 function createOgiva(vals) {
   let container = document.getElementById('ogiva');
   let intervalo = vals.intervals[0][0] - vals.mediaIntervalsH;
-  let arrFirstPosition = intervalo > 0 ? intervalo : 0;
+  // let arrFirstPosition = intervalo > 0 ? intervalo : 0;
   
   vals.fac.unshift(0);
-  vals.intervals[0].unshift(arrFirstPosition);
+  // vals.intervals[0].unshift(arrFirstPosition);
 
   if (_chart3 === null) {
     _chart3 = new Chart(container, {
