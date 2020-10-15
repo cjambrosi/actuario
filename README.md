@@ -6,7 +6,7 @@
 
 # Actuarĭu
 
-Simples aplicação demonstrativa de cálculos estatísticos, desenvolvido para a displina de Estatística Aplicada à Computação.
+Simples aplicação demonstrativa de cálculos estatísticos, desenvolvido para a disciplina de Estatística Aplicada à Computação.
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/cjambrosi/actuario?color=%2379C83D&label=Last%20Commit)
 ![GitHub language count](https://img.shields.io/github/languages/count/cjambrosi/actuario?label=Languages)
@@ -22,7 +22,7 @@ Simples aplicação demonstrativa de cálculos estatísticos, desenvolvido para 
 
 Certifique-se que tenha instalado o NodeJS (versão >= 12.18.3) em sua máquina.
 
-Abra seu terminal e instale o Gulp de forma global com o comando a baixo:
+Abra seu terminal e instale o Gulp de forma global com o comando abaixo:
 
 > npm install gulp --global
 
@@ -30,7 +30,7 @@ Clone o repositório, acesse a raiz do projeto e instale as dependências.
 
 > npm install
 
-Para executar a aplicação, execute o comando a baixo:
+Para executar a aplicação, execute o comando abaixo:
 
 > gulp
 
