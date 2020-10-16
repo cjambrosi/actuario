@@ -10,7 +10,11 @@ function start() {
   const btnBackToTop = document
     .querySelector('#backToTop');
 
+  const btnCopy = document
+    .querySelector('#copyToTransferArea');
+
   btnBackToTop.addEventListener('click', backToTop);
+  btnCopy.addEventListener('click', copyToTransferArea);
 }
 
 const scrollSpy = () => {
@@ -54,3 +58,31 @@ const openMenuMobile = () => {
 
   M.Sidenav.init(elements);
 }
+
+const copyToTransferArea = (event) => {
+  let copyValue = document
+    .getElementById("inputExample");
+
+  copyValue.select();
+  copyValue.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+
+  showCopyMsg()
+}
+
+const showCopyMsg = () => {
+  $('#copyToTransferArea')
+    .attr('data-tooltip', 'Copiado!')
+    .addClass('copied')
+    .tooltip();
+
+  $('.-copymsg').addClass('showmsg');
+
+  setTimeout(() => {
+    $('#copyToTransferArea')
+      .attr('data-tooltip', 'Copiar')
+      .removeClass('copied');
+
+    $('.-copymsg').removeClass('showmsg');
+  }, 3000);
+} 

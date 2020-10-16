@@ -54,6 +54,72 @@
 	}
 }
 
+.-smallexemple {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: -10px;
+
+	.-exblock {
+		align-items: center;
+		display: flex;
+		justify-content: flex-start;
+		margin-right: 10px;
+
+		span {
+			font-size: 12px;
+		}
+		
+		.-inputExample {
+			display: inline-block;
+			width: 146px;
+			padding: 0;
+			margin: 0;
+			height: auto;
+			border: 0;
+			font-size: 12px;
+			margin-left: 4px;
+			pointer-events: none;
+			cursor: text;
+
+			&:focus {
+				border: 0;
+			}
+
+			&:disabled {
+				color: @c-primary1;
+			}
+		}
+	}
+
+	.-btncopy {
+		background: transparent;
+		border: 0;
+		align-items: center;
+		display: flex;
+
+		&.copied {
+			color: #689f38;
+		}
+
+		.icon {
+			font-size: 16px;
+		}
+
+	}
+	.-copymsg {
+		display: none;
+		color: #689f38;
+		font-size: 10px;
+		margin: 0;
+
+		&.showmsg {
+			display: block;
+		}
+	}
+
+}
+
 .-menumobile {
 	padding: 20px 0;
 
