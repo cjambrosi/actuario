@@ -36,7 +36,7 @@ Para executar a aplicação, execute o comando abaixo:
 
 É isso aí! <http://localhost:8090>
 
-## Arquivos e Diretórios
+## Estrutura de diretórios
 
 ```bash
 
