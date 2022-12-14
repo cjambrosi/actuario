@@ -1,11 +1,15 @@
 {
   "name": "actuariu",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Programa estatístico básico. Desenvolvido para a disciplina de Estatística Aplicada à Computação.",
+  "author": "Cristian J. Ambrosi",
+  "license": "Apache-2.0",
   "main": "index.html",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "https://github.com/CristianAmbrosi/actuario#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CristianAmbrosi/actuario.git"
@@ -19,15 +23,12 @@
     "javascript",
     "gulp",
     "nodejs",
-    "materializecss",
+    "bootstrap",
     "chartjs"
   ],
-  "author": "Cristian J. Ambrosi",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/CristianAmbrosi/actuario/issues"
   },
-  "homepage": "https://github.com/CristianAmbrosi/actuario#readme",
   "dependencies": {
     "chart.js": "^2.9.3",
     "express": "^4.17.3",
