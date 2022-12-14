@@ -53,9 +53,11 @@ Para executar a aplicação, execute o comando abaixo:
 │     └─ default.less
 ├─ pub // Publishing directory
 │  ├─ css
+│  │  ├─ lib.min.css
 │  │  └─ bundle.min.css
 │  │
-│   ─ js
+│  └─ js
+│     ├─ lib.min.js
 │     └─ bundle.min.js
 │
 ├─ public
