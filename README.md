@@ -34,7 +34,7 @@ Para executar a aplicação, execute o comando abaixo:
 
 > gulp
 
-É isso aí! `http://localhost:8090`
+É isso aí! <http://localhost:8090>
 
 ## Arquivos e Diretórios
 
