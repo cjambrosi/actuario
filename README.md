@@ -77,5 +77,5 @@ Para executar a aplicação, execute o comando abaixo:
 
 ## Autor
 
-| [<img src="https://avatars3.githubusercontent.com/u/9125404?s=460&v=4" width=115><br><sub>@cjambrosi</sub>](https://www.linkedin.com/in/cjambrosi)
+| [<img src="https://avatars3.githubusercontent.com/u/9125404?s=460&v=4" alt="Linkedin cjambrosi" title="Linkedin/cjambrosi" width=115 /><br><sub>@cjambrosi</sub>](https://www.linkedin.com/in/cjambrosi)
 | :---: |
