@@ -20,7 +20,7 @@ Simples aplicação demonstrativa de cálculos estatísticos, desenvolvido para 
 
 ## Executando a aplicação
 
-Certifique-se que tenha instalado o NodeJS (versão >= 12.18.3) em sua máquina.
+Certifique-se que tenha instalado o NodeJS (+16v) em sua máquina.
 
 Abra seu terminal e instale o Gulp de forma global com o comando abaixo:
 
@@ -39,36 +39,38 @@ Para executar a aplicação, execute o comando abaixo:
 ## Arquivos e Diretórios
 
 ```bash
-├── assets
-│   ├── dev
-│   │   ├── js
-│   │   │   ├── calc
-│   │   │   │   ├──
-│   │   │   │   ├──
-│   │   │   │   └──
-│   │   │   └── default.js
-│   │   └── less
-│   │       ├──
-│   │       ├──
-│   │       └──
-│   ├── images
-│   └── pub
-│       ├── css
-│       │   ├──
-│       │   └──
-│       └── js
-│           ├──
-│           └──
-├── .gitignore
-├── gulpfile.js
-├── gulpfile.json
-├── index.hml
-├── LICENSE
-├── package-lock.json
-├── package.json
-├── README.md
-├── server.js
-└── webpack.config.js
+
+├─ dev // Development directory
+│  ├─ js
+│  │  ├─ calc
+│  │  │  ├─ application.js
+│  │  │  ├─ chart.module.js
+│  │  │  └─ statistical-calculations.js
+│  │  └─ default.js
+│  └─ less
+│     ├─ variables.less
+│     ├─ reset.less
+│     └─ default.less
+├─ pub // Publishing directory
+│  ├─ css
+│  │  └─ bundle.min.css
+│  │
+│   ─ js
+│     └─ bundle.min.js
+│
+├─ public
+│  └─ images
+│
+├─ .gitignore
+├─ gulpfile.js // Build implementation
+├─ gulpfile.json
+├─ index.hml
+├─ LICENSE
+├─ package-lock.json
+├─ package.json
+├─ README.md
+├─ server.js
+└─ webpack.config.js
 ```
 
 ## Autor

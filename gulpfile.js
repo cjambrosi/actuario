@@ -78,7 +78,7 @@ function browserSyncServer() {
   });
 }
 
-function watchFile() {
+function watchFile () {
   gulp.watch(sources().watch.less, style);
   gulp.watch(sources().watch.html).on('change', reload);
   gulp.watch(sources().watch.js, script).on('change', reload);

@@ -1,7 +1,7 @@
 {
   "less": [
-    "./assets/dev/less/reset.less",
-    "./assets/dev/less/default.less"
+    "./dev/less/reset.less",
+    "./dev/less/default.less"
   ],
   "lib": {
     "css": [
@@ -16,15 +16,15 @@
     ]
   }, 
   "js": [
-    "./assets/dev/js/calc/application.js",
-    "./assets/dev/js/default.js"
+    "./dev/js/calc/application.js",
+    "./dev/js/default.js"
   ],
   "watch": {
     "less": [
-      "./assets/dev/less/**/*.less"
+      "./dev/less/**/*.less"
     ],
     "js": [
-      "./assets/dev/js/**/*.js"
+      "./dev/js/**/*.js"
     ],
     "html": [
       "./*.html"
@@ -32,10 +32,10 @@
   },
   "path": {
     "css": [
-      "./assets/pub/css/"
+      "./pub/css/"
     ],
     "js": [
-      "./assets/pub/js/"
+      "./pub/js/"
     ]
   },
   "server": {
