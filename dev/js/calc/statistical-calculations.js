@@ -1,30 +1,30 @@
-import { sprintf } from 'sprintf-js';
-import { chartModule } from './chart.module';
+import { sprintf } from "sprintf-js";
+import { chartModule } from "./chart.module";
 
 /** Entrada dos Dados **/
-let valores = document.getElementById('textCalc');
-let btnCalc = document.getElementById('btnCalc');
-let btnReset = document.getElementById('resetActuario');
+let valores = document.getElementById("textCalc");
+let btnCalc = document.getElementById("btnCalc");
+let btnReset = document.getElementById("resetActuario");
 let graphVals = {
   intervals: [],
   fi: [],
   xi: [],
   fac: [],
-  mediaIntervalsH: 0
-}
+  mediaIntervalsH: 0,
+};
 
-btnReset.addEventListener('click', cleanApp);
+btnReset.addEventListener("click", cleanApp);
 
-btnCalc.addEventListener('click', () => {
+btnCalc.addEventListener("click", () => {
   let exprRegular = /([A-Za-z_])/;
 
   if (exprRegular.test(valores.value)) {
-    M.toast({ html: 'Somente números e espaços!' });
+    M.toast({ html: "Somente números e espaços!" });
     return;
   }
 
   if (valores.value.length <= 0) {
-    M.toast({ html: 'Insira um valor válido!' });
+    M.toast({ html: "Insira um valor válido!" });
     return;
   }
 
@@ -43,47 +43,62 @@ btnCalc.addEventListener('click', () => {
     fi: [],
     xi: [],
     fac: [],
-    mediaIntervalsH: 0
-  }
+    mediaIntervalsH: 0,
+  };
 });
 
 /** Gera a Tabela **/
 function frequencyModule(vals) {
-  let totalSum = vals.reduce((a, b) => { return a + b });
+  let totalSum = vals.reduce((a, b) => {
+    return a + b;
+  });
   let intervals = calcIntervals(vals);
   let acumulatedFrequency = 0;
   let arrIntervals = [];
 
   let tableInfo = intervals.map((interval) => {
-    let min = interval.min, max = interval.max;
+    let min = interval.min,
+      max = interval.max;
     arrIntervals.push(min);
     arrIntervals.push(max);
     return {
-      interval: sprintf('%03d ├─ %03d', min, max),
+      interval: sprintf("%03d ├─ %03d", min, max),
       midPoint: (min + max) / 2,
-      frequency: vals.map((n) => {
-        return (n < max && n >= min) ? 1 : 0;
-      }).reduce((a, b) => {
-        return a + b;
-      })
+      frequency: vals
+        .map((n) => {
+          return n < max && n >= min ? 1 : 0;
+        })
+        .reduce((a, b) => {
+          return a + b;
+        }),
     };
   });
 
   graphVals.intervals.push(filterAndSort(arrIntervals));
 
-  let totalFrequency = tableInfo.map((num) => {
-    return num.frequency;
-  }).reduce((a, b) => { return a + b; });
+  let totalFrequency = tableInfo
+    .map((num) => {
+      return num.frequency;
+    })
+    .reduce((a, b) => {
+      return a + b;
+    });
 
   tableInfo.map((e) => {
-    let frequencyPercent = Math.min(e.frequency * 100 / totalFrequency, 100.0);
+    let frequencyPercent = Math.min(
+      (e.frequency * 100) / totalFrequency,
+      100.0
+    );
     acumulatedFrequency += e.frequency;
-    let acumulatedFrequencyPercent = Math.min(acumulatedFrequency * 100 / totalFrequency, 100);
+    let acumulatedFrequencyPercent = Math.min(
+      (acumulatedFrequency * 100) / totalFrequency,
+      100
+    );
 
     return $.extend(e, {
       frequencyPercent: frequencyPercent,
       acumulatedFrequency: acumulatedFrequency,
-      acumulatedFrequencyPercent: acumulatedFrequencyPercent
+      acumulatedFrequencyPercent: acumulatedFrequencyPercent,
     });
   });
 
@@ -94,7 +109,9 @@ function frequencyModule(vals) {
     graphVals.xi.push(tableRow.midPoint);
     graphVals.fac.push(tableRow.acumulatedFrequency);
 
-    tableHTML.push(sprintf(`
+    tableHTML.push(
+      sprintf(
+        `
     <tr>
       <td>%3s</td>
       <td>%3d</td>
@@ -103,16 +120,20 @@ function frequencyModule(vals) {
       <td>%.2f</td>
       <td>%.2f</td>
     </tr>
-    `, tableRow.interval,
-      tableRow.frequency,
-      tableRow.midPoint,
-      tableRow.acumulatedFrequency,
-      tableRow.frequencyPercent,
-      tableRow.acumulatedFrequencyPercent
-    ));
+    `,
+        tableRow.interval,
+        tableRow.frequency,
+        tableRow.midPoint,
+        tableRow.acumulatedFrequency,
+        tableRow.frequencyPercent,
+        tableRow.acumulatedFrequencyPercent
+      )
+    );
   }
 
-  tableHTML.push(sprintf(`
+  tableHTML.push(
+    sprintf(
+      `
     <tr>
       <td><b>Total</b> %d</td>
       <td>%d</td>
@@ -121,9 +142,15 @@ function frequencyModule(vals) {
       <td>%.2f</td>
       <td>-</td>
     </tr>
-  `, totalSum, totalFrequency, 100.0));
+  `,
+      totalSum,
+      totalFrequency,
+      100.0
+    )
+  );
 
-  document.getElementById('frequencyTableBody').innerHTML = tableHTML.join("\n");
+  document.getElementById("frequencyTableBody").innerHTML =
+    tableHTML.join("\n");
 }
 
 function calcIntervals(vals) {
@@ -136,10 +163,14 @@ function calcIntervals(vals) {
   let groupLength = (maxNum - minNum) / groupCount;
   groupLength = parseInt(groupLength) + 1;
   graphVals.mediaIntervalsH = groupLength;
-  let result = [], n = minNum;
+  let result = [],
+    n = minNum;
 
   for (let i = 0; i < groupCount; i++) {
-    result[i] = { min: Math.round(n), max: Math.round(Math.min(n + groupLength)) }
+    result[i] = {
+      min: Math.round(n),
+      max: Math.round(Math.min(n + groupLength)),
+    };
     n += groupLength;
   }
 
@@ -151,7 +182,9 @@ function filterAndSort(arr) {
     return index == self.indexOf(elem);
   });
 
-  return arr.sort((a, b) => { return a - b; });
+  return arr.sort((a, b) => {
+    return a - b;
+  });
 }
 
 /** Cálculos Estatísticos **/
@@ -160,55 +193,52 @@ function infoModule(vals) {
   let desvios = calculaDesvios(vals, media);
   vals = vals || [];
 
-  document
-    .getElementById('conjunto')
-    .innerHTML = sprintf(` %s `, vals.join(', '));
+  document.getElementById("conjunto").innerHTML = sprintf(
+    ` %s `,
+    vals.join(", ")
+  );
 
-  document
-    .getElementById('media_aritmetica')
-    .innerHTML = media;
+  document.getElementById("media_aritmetica").innerHTML = media;
 
-  document
-    .getElementById('media_geometrica')
-    .innerHTML = calculaMediaGeometrica(vals);
+  document.getElementById("media_geometrica").innerHTML =
+    calculaMediaGeometrica(vals);
 
-  document
-    .getElementById('mediana')
-    .innerHTML = calculaMediana(vals);
+  document.getElementById("mediana").innerHTML = calculaMediana(vals);
 
-  document
-    .getElementById('moda')
-    .innerHTML = calculaModa(vals);
+  document.getElementById("moda").innerHTML = calculaModa(vals);
 
-  document
-    .getElementById('desvio_populacional')
-    .innerHTML = sprintf("%.2f", desvios.populacional);
+  document.getElementById("desvio_populacional").innerHTML = sprintf(
+    "%.2f",
+    desvios.populacional
+  );
 
-  document
-    .getElementById('variancia_populacional')
-    .innerHTML = calculaVariaciaPopulacional(desvios.populacional);
+  document.getElementById("variancia_populacional").innerHTML =
+    calculaVariaciaPopulacional(desvios.populacional);
 
-  document
-    .getElementById('desvio_amostral')
-    .innerHTML = sprintf("%.2f", desvios.amostral);
+  document.getElementById("desvio_amostral").innerHTML = sprintf(
+    "%.2f",
+    desvios.amostral
+  );
 
-  document
-    .getElementById('variancia_amostral')
-    .innerHTML = calculaVariaciaAmostral(desvios.amostral);
+  document.getElementById("variancia_amostral").innerHTML =
+    calculaVariaciaAmostral(desvios.amostral);
 
-  document
-    .getElementById('coeficiente_variacao_amostral')
-    .innerHTML = calculaCoeficienteVariacaoAmostral(desvios.amostral, media)
+  document.getElementById("coeficiente_variacao_amostral").innerHTML =
+    calculaCoeficienteVariacaoAmostral(desvios.amostral, media);
 
-  document
-    .getElementById('coeficiente_variacao_populacional')
-    .innerHTML = calculaCoeficienteVariacaoPopulacional(desvios.populacional, media);
+  document.getElementById("coeficiente_variacao_populacional").innerHTML =
+    calculaCoeficienteVariacaoPopulacional(desvios.populacional, media);
 }
 
 function calculaDesvios(vals, media) {
-  let cals = vals.map(num => Math.abs(num - media) ** 2.0).reduce((a, b) => a + b);
+  let cals = vals
+    .map((num) => Math.abs(num - media) ** 2.0)
+    .reduce((a, b) => a + b);
 
-  return { populacional: (cals / vals.length) ** 0.5, amostral: (cals / (vals.length - 1)) ** 0.5 }
+  return {
+    populacional: (cals / vals.length) ** 0.5,
+    amostral: (cals / (vals.length - 1)) ** 0.5,
+  };
 }
 
 function calculaVariaciaAmostral(desvio) {
@@ -220,15 +250,20 @@ function calculaVariaciaPopulacional(desvio) {
 }
 
 function calculaCoeficienteVariacaoAmostral(desvio, media) {
-  return sprintf(`%.2f`, desvio / media * 100.0);
+  return sprintf(`%.2f`, (desvio / media) * 100.0);
 }
 
 function calculaCoeficienteVariacaoPopulacional(desvio, media) {
-  return sprintf(`%.2f`, desvio / media * 100.0);
+  return sprintf(`%.2f`, (desvio / media) * 100.0);
 }
 
 function calculaMediaAritmetica(vals) {
-  return sprintf(`%.2f`, vals.reduce((a, b) => { return a + b; }) / vals.length);
+  return sprintf(
+    `%.2f`,
+    vals.reduce((a, b) => {
+      return a + b;
+    }) / vals.length
+  );
 }
 
 function calculaMediaGeometrica(vals) {
@@ -240,7 +275,7 @@ function calculaMediaGeometrica(vals) {
 }
 
 function calculaMediana(vals) {
-  let mid = (Math.floor(vals.length / 2) + vals.length % 2) - 1;
+  let mid = Math.floor(vals.length / 2) + (vals.length % 2) - 1;
 
   if (vals.length % 2 == 0) {
     return sprintf(`%.2f`, (vals[mid] + vals[mid + 1]) / 2);
@@ -253,7 +288,8 @@ function calculaModa(vals) {
   let min = Math.min.apply(null, vals);
   let max = Math.max.apply(null, vals);
   let counted = [];
-  let answer = [], maxModa = -1;
+  let answer = [],
+    maxModa = -1;
 
   for (var i = min; i <= max; i++) {
     counted[i] = { val: i, count: 0 };
@@ -263,11 +299,14 @@ function calculaModa(vals) {
     counted[num].count++;
   }
 
-  let sortedCount = counted.sort((a, b) => {
-    return a.count - b.count;
-  }).reverse().filter((a) => {
-    return a.hasOwnProperty('val');
-  });
+  let sortedCount = counted
+    .sort((a, b) => {
+      return a.count - b.count;
+    })
+    .reverse()
+    .filter((a) => {
+      return a.hasOwnProperty("val");
+    });
 
   if (sortedCount.length > 1) {
     for (let num of sortedCount) {
@@ -278,29 +317,29 @@ function calculaModa(vals) {
     }
   }
 
-  return answer.length > 0 ? answer.join(', ') : 'Amodal';
+  return answer.length > 0 ? answer.join(", ") : "Amodal";
 }
 
 function showContents(visible) {
-  const $sections = $('.-sectionhidden');
+  const $sections = $(".-sectionhidden");
 
   if (visible) {
-    $sections.addClass('-hiddentovisible');
+    $sections.addClass("-hiddentovisible");
     setTimeout(() => {
-      $sections.addClass('-visible');
+      $sections.addClass("-visible");
     }, 150);
   } else {
-    $sections.removeClass('-visible');
+    $sections.removeClass("-visible");
     setTimeout(() => {
-      $sections.removeClass('-hiddentovisible');
+      $sections.removeClass("-hiddentovisible");
     }, 150);
   }
 }
 
 function cleanApp() {
-  const textCalc = $('#textCalc');
-  textCalc.val('');
-  textCalc.siblings().removeClass('active');
+  const textCalc = $("#textCalc");
+  textCalc.val("");
+  textCalc.siblings().removeClass("active");
 
   showContents(false);
 
@@ -309,8 +348,8 @@ function cleanApp() {
     fi: [],
     xi: [],
     fac: [],
-    mediaIntervalsH: 0
-  }
+    mediaIntervalsH: 0,
+  };
 
-  M.toast({ html: 'Actuarĭu reiniciado!' });
+  M.toast({ html: "Actuarĭu reiniciado!" });
 }
