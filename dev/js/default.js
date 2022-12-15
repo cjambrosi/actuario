@@ -56,29 +56,33 @@ const openMenuMobile = () => {
   M.Sidenav.init(elements);
 };
 
-const copyToTransferArea = (event) => {
-  let copyValue = document.getElementById("inputExample");
+const copyToTransferArea = async (event) => {
+  const copyValue = document.getElementById("inputExample")?.value;
 
-  copyValue.select();
-  copyValue.setSelectionRange(0, 99999);
-  document.execCommand("copy");
+  if (!navigator?.clipboard?.writeText) {
+    clipboardAlert(false);
+    return;
+  }
 
-  showCopyMsg();
+  await navigator?.clipboard?.writeText(copyValue);
+  clipboardAlert(true);
 };
 
-const showCopyMsg = () => {
+const clipboardAlert = (isCopied) => {
+  const message = isCopied ? "Copiado!" : "Clipboard não suportado";
+
   $("#copyToTransferArea")
-    .attr("data-tooltip", "Copiado!")
+    .attr("data-tooltip", message)
     .addClass("copied")
     .tooltip();
 
-  $(".-copymsg").addClass("showmsg");
+  if (isCopied) $(".-copymsg").addClass("showmsg");
 
   setTimeout(() => {
     $("#copyToTransferArea")
       .attr("data-tooltip", "Copiar")
       .removeClass("copied");
 
-    $(".-copymsg").removeClass("showmsg");
+    if (isCopied) $(".-copymsg").removeClass("showmsg");
   }, 3000);
 };
