@@ -36,6 +36,7 @@
 ehthumbs.db
 Thumbs.db
 .*/*
+bundle.min.js.LICENSE.txt
 
 # Folders #
 ###########
